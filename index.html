@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Formatting</title>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    .control-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    .control-box button {
+        padding: 5px 10px;
+    }
+    input[type="number"] {
+        width: 60px;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    .text-container {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="control-box">
+        <button onclick="boldText('text1')">B</button>
+        <button onclick="italicText('text1')">I</button>
+        <button onclick="underlineText('text1')">U</button>
+        <input type="number" id="fontSize1" onchange="changeFontSize('text1', this.value)" placeholder="Font Size">
+        <input type="color" id="color1" onchange="changeColor('text1', this.value)">
+    </div>
+    <div class="text-container">
+        <p id="text1">He's not the sharpest knife in the drawer.</p>
+    </div>
+
+    <div class="control-box">
+        <button onclick="boldText('text2')">B</button>
+        <button onclick="italicText('text2')">I</button>
+        <button onclick="underlineText('text2')">U</button>
+        <input type="number" id="fontSize2" onchange="changeFontSize('text2', this.value)" placeholder="Font Size">
+        <input type="color" id="color2" onchange="changeColor('text2', this.value)">
+    </div>
+    <div class="text-container">
+        <p id="text2">The big building was blazing with lights.</p>
+    </div>
+
+    <div class="control-box">
+        <button onclick="boldText('text3')">B</button>
+        <button onclick="italicText('text3')">I</button>
+        <button onclick="underlineText('text3')">U</button>
+        <input type="number" id="fontSize3" onchange="changeFontSize('text3', this.value)" placeholder="Font Size">
+        <input type="color" id="color3" onchange="changeColor('text3', this.value)">
+    </div>
+    <div class="text-container">
+        <p id="text3">Now you must answer some big questions.</p>
+    </div>
+
+    <div class="control-box">
+        <button onclick="boldText('text4')">B</button>
+        <button onclick="italicText('text4')">I</button>
+        <button onclick="underlineText('text4')">U</button>
+        <input type="number" id="fontSize4" onchange="changeFontSize('text4', this.value)" placeholder="Font Size">
+        <input type="color" id="color4" onchange="changeColor('text4', this.value)">
+    </div>
+    <div class="text-container">
+        <p id="text4">Get Your Act Together!</p>
+    </div>
+</div>
+
+<script>
+    function boldText(id) {
+        var element = document.getElementById(id);
+        element.style.fontWeight = (element.style.fontWeight == 'bold') ? 'normal' : 'bold';
+    }
+
+    function italicText(id) {
+        var element = document.getElementById(id);
+        element.style.fontStyle = (element.style.fontStyle == 'italic') ? 'normal' : 'italic';
+    }
+
+    function underlineText(id) {
+        var element = document.getElementById(id);
+        element.style.textDecoration = (element.style.textDecoration == 'underline') ? 'none' : 'underline';
+    }
+
+    function changeFontSize(id, size) {
+        var element = document.getElementById(id);
+        element.style.fontSize = size + 'px';
+    }
+
+    function changeColor(id, color) {
+        var element = document.getElementById(id);
+        element.style.color = color;
+    }
+</script>
+</body>
+</html>
